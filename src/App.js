@@ -4,7 +4,7 @@ import About from "./Components/About";
 import Navbar from "./Components/Navbar";
 import Alerts from "./Components/Alerts";
 import TextForm from "./Components/TextForm";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -34,7 +34,20 @@ function App() {
     }
   };
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
+    //   <Navbar
+    //     logoText="Level-X"
+    //     AboutText="About Us"
+    //     mode={mode}
+    //     toggleMode={toggleMode}
+    //   />
+    //   <Alerts alerts={alert} />
+    //   <Routes>
+    //     <Route exact path="/about" element={<About />} />
+    //     <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Text Area" />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <>
       <Navbar
         logoText="Level-X"
         AboutText="About Us"
@@ -42,11 +55,10 @@ function App() {
         toggleMode={toggleMode}
       />
       <Alerts alerts={alert} />
-      <Routes>
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Text Area" />} />
-      </Routes>
-    </BrowserRouter>
+      <TextForm showAlert={showAlert} heading="Text Area" />
+      <About />
+
+    </>
   );
 }
 
